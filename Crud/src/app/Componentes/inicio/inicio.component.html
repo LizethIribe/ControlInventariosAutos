@@ -1,0 +1,31 @@
+<div class="container">  
+  <p>Lista de Autos!</p>
+  <button routerLink="/add" type="button" class="btn btn-dark">Agregar</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Logo</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Auto of ListarAutos">
+        <th>{{Auto.id_Auto}}</th>
+        <td>{{Auto.nombre}}</td>
+        <td>{{Auto.marca}}</td>
+        <td><img src="{{Auto.logo}}" alt="" width="50" height="50"></td>
+        <td>
+            <button (click)="modificar(Auto)" type="button" class="btn btn-primary">Editar</button>
+        </td>
+        <td>
+            <button (click)="eliminar(Auto)" type="button" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
